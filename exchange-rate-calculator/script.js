@@ -7,27 +7,44 @@ const swap = document.getElementById("swap");
 
 
 // fetch exchange rates and update the dom 
-function calculate() {
-    console.log('RAN');
+// function calculate() {
+//     console.log('RAN');
 
-    const currency_one = currencyEl_one.value;
-    const currency_two = currencyEl_two.value;
+//     const currency_one = currencyEl_one.value;
+//     const currency_two = currencyEl_two.value;
     
 
-    fetch(`https://v6.exchangerate-api.com/v6/6b60c2a46e9c9c8b5b2d78dc/latest/${currency_one}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            const rate = data.conversion_rates[currency_two];
-            console.log(rate);
+//     fetch(`https://v6.exchangerate-api.com/v6/6b60c2a46e9c9c8b5b2d78dc/latest/${currency_one}`)
+//         .then(res => res.json())
+//         .then(data => {
+//             console.log(data);
+//             const rate = data.conversion_rates[currency_two];
+//             console.log(rate);
 
-            rateEL.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
+//             rateEL.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
 
-            amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
-        });
+//             amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
+//         });
 
 
-}
+// }
+
+// Fetch exchange rates and update the DOM
+function calculate() {
+    const currency_one = currencyEl_one.value;
+    const currency_two = currencyEl_two.value;
+  
+    fetch(`https://api.exchangerate-api.com/v4/latest/${currency_one}`)
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        const rate = data.rates[currency_two];
+  
+        rateEL.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
+  
+        amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
+      });
+  }
 
 
 // event listeners
