@@ -39,6 +39,11 @@ function doubleMoney() {
     updateDom();
 }
 
+function sortByRichest() {
+    data.sort((a,b) => b.money - a.money);
+    updateDom();
+}
+
 
 function addData(obj) {
     data.push(obj);
@@ -69,6 +74,7 @@ function formatMoney(number) {
 // event listeners
 addUserBtn.addEventListener('click',getRandomUser);
 doubleBtn.addEventListener('click',doubleMoney);
+sortBtn.addEventListener('click',sortByRichest);
 
 
 
