@@ -1,3 +1,5 @@
+
+
 const main = document.getElementById('main');
 const addUserBtn = document.getElementById('add-user');
 const doubleBtn = document.getElementById('double');
@@ -31,7 +33,32 @@ async function getRandomUser() {
 
 function addData(obj) {
     data.push(obj);
+    updateDom();
 }
+
+function updateDom(providedData = data) {
+    // clear the main div
+    main.innerHTML = "<h2><strong>person</strong>wealth</h2>";
+
+    providedData.forEach(item => {
+        const element = document.createElement("div");
+        element.classList.add("person");
+        element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(item.money)}`;
+        main.appendChild(element);
+    });
+
+
+}
+
+
+// Format number as money 
+function formatMoney(number) {
+    return "$" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+
+
+// event listeners
+addUserBtn.addEventListener('click',getRandomUser);
 
 
 
