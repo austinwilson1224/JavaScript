@@ -18,7 +18,7 @@ getRandomUser();
 async function getRandomUser() {
     const res = await fetch('https://randomuser.me/api');
     const data = await res.json();
-    console.log(data)
+    // console.log(data)
 
     const user = data.results[0];
 
@@ -41,6 +41,12 @@ function doubleMoney() {
 
 function sortByRichest() {
     data.sort((a,b) => b.money - a.money);
+    updateDom();
+}
+
+function showMillionaires() {
+    console.log(data)
+    data = data.filter(user => user.money > 1000000);
     updateDom();
 }
 
@@ -75,6 +81,7 @@ function formatMoney(number) {
 addUserBtn.addEventListener('click',getRandomUser);
 doubleBtn.addEventListener('click',doubleMoney);
 sortBtn.addEventListener('click',sortByRichest);
+showMillionairesBtn.addEventListener('click',showMillionaires)
 
 
 
