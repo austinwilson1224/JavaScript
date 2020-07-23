@@ -24,19 +24,74 @@
         <button class="toggle" id="toggle">
             <i class="fa fa-bars fa-2x"></i>
         </button>
-
-        <h1>My landing page</h1>
-        <p>blah blah blah</p>
-        <button class="cta-btn" id="open"></button>
-
-        <div class="container">
-            <h2>What is this landing page about?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam laborum dolorem excepturi nulla. Quis suscipit totam earum laboriosam asperiores, dolorem eum beatae, voluptas non iste necessitatibus reiciendis officia dignissimos nemo.</p>
-        
-        
-        </div>
     </header>
+
+    <h1>My landing page</h1>
+    <p>blah blah blah</p>
+    <button class="cta-btn" id="open">Sign Up</button>
+
+    <div class="container">
+        <h2>What is this landing page about?</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam laborum dolorem excepturi nulla. 
+            Quis suscipit totam earum laboriosam asperiores, dolorem eum beatae, voluptas non iste necessitatibus reiciendis officia dignissimos nemo.
+        </p>
+
+        <h2>Tell me more</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Nobis alias eum corrupti accusantium, ducimus dicta magni in saepe tenetur facilis! 
+            Minima cumque soluta molestias beatae possimus animi officia, excepturi necessitatibus!
+        </p>
+
+        <h2>Benefits</h2>
+        <ul>
+            <li>Lifetime access</li>
+            <li>30 day money back gaurantee</li>
+            <li>tailored customer support</li>
+        </ul>
+
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Quos labore totam, fugiat amet, deserunt maiores sapiente cumque magnam esse voluptates, 
+            officiis quia nesciunt voluptas aliquam harum placeat eligendi? 
+            Molestias, odit!
+        </p>
+        
+        
+    </div>
+
     <script src="script.js"></script>
+
+    <!-- Modal-->
+
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <p>Register with us get offers, support and more</p>
+                <form action="" class="modal-form">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter name">
+                    </div>
+                    <div>
+                        <label for="password">password</label>
+                        <input type="password" id="password" placeholder="Enter password">
+                    </div>
+                    <div>
+                        <label for="password2">Confirm password</label>
+                        <input type="password" id="password2" placeholder="Confirm password">
+                    </div>
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 </html>
