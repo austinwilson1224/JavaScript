@@ -1,0 +1,1 @@
+this is a landing page for practice with css
