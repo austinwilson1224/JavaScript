@@ -104,7 +104,13 @@ h1 {
 }
 
 .popup button {
-    
+    cursor: pointer;
+    background-color: #fff;
+    color: #2980b9;
+    border:0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
 }
 
 
