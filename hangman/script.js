@@ -4,3 +4,25 @@ const playAgainBtn = document.getElementById('play-again');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
+
+
+const figureParts = document.getElementById('.figure-part');
+
+const words = ['application','programming','interface','wizard'];
+
+let selectedWord = words[Math.floor(Math.random() * words.length)]
+
+const correctLetters = [];
+const wrongLetters = [];
+
+
+
+// Show the hidden word
+// function displayWord() {
+//     wordEl.innerHTML = `
+//         ${selectedWord
+//         }`;
+// }
+
+displayWord();
+
