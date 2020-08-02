@@ -90,7 +90,7 @@ h1 {
     left: 0;
     right: 0;
     display: flex;
-    /* display: none; */
+    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -112,6 +112,33 @@ h1 {
     padding: 12px 20px;
     font-size: 16px;
 }
+
+.popup-button:active {
+    transform: scale(.98);
+}
+
+.popup button:focus {
+    outline: 0;
+}
+
+
+.notification-container {
+    background-color: rgba(0,0,0,.3);
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    position: absolute;
+    bottom: -50px;
+    transition: transform .3s ease-in-out;
+}
+
+.notification-container p {
+    margin: 0;
+}
+
+.notification-container.show {
+    transform: ;
+}
+
 
 
 
