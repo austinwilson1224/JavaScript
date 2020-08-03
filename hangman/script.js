@@ -12,17 +12,32 @@ const words = ['application','programming','interface','wizard'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)]
 
-const correctLetters = [];
+const correctLetters = ['w','i','z','a','r','d'];
 const wrongLetters = [];
 
 
 
 // Show the hidden word
-// function displayWord() {
-//     wordEl.innerHTML = `
-//         ${selectedWord
-//         }`;
-// }
+function displayWord() {
+    wordEl.innerHTML = `
+        ${selectedWord
+            .split('')
+            .map(letter => `
+                <span class="letter">
+                    ${correctLetters.includes(letter) ? letter : ''}
+                </span>    
+            `).join('')
+
+        }
+    `;
+    const innerWord = wordEl.innerText.replace(/\n/g,'');
+    console.log(wordEl.innerText, innerWord)
+
+    if (innerWord === selectedWord) {
+        finalMessage.innerText = 'congratulations! you won';
+        popup.style.display = 'flex';
+    }
+}
 
 displayWord();
 
