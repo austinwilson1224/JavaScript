@@ -210,6 +210,64 @@ while (condition2) {
     }
 }
 
+// operators
+console.log("OPERATORS");
+var a = 5;
+var a2 = 4.2;
+var a3 = "Join";
+var b = 10;
+var b2 = 2.2;
+var b3 = "this";
+a += b;
+a2 += b2;
+a3 += b3;
+console.log(a,a2,a3);
+//subtraction
+var sub1 = 1;
+var sub2 = '1';
+sub1 -= sub2;
+console.log(sub1);
+a = 1.3;
+b = 2.2;
+console.log(a * b);
+if((a*b).toFixed() == 2.86) {
+    console.log(true)
+}
+
+// division and modulus
+console.log("DIV?MOD");
+a = 12;
+b = '2';
+console.log(a/b);
+console.log(a % b);
+
+// comparison operators
+console.log(1 === 1);
+console.log(1 === '1');
+console.log(1 == '1');
+console.log(1 !== '1');
+console.log(1 != '1');
+console.log(0 == null);
+console.log(null === undefined);
+
+// boolean
+if(1==1 && 2==2) {
+    console.log("TRUE");
+} else {
+    console.log("false");
+}
+console.log((1==1&&2===2));
+console.log(1==1||2==3,'sfkjsd');
+
+// ternary
+a = 5;
+b = 5;
+
+console.log(a == b? "equal": "not equal");
+
+console.log(a + b * 2);
+
+
 
 
 
