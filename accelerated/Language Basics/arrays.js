@@ -43,4 +43,36 @@ console.log(array);
 var newArray2 = newArray.slice(0);
 console.log(newArray2);
 
+// filter
+array = ['old',1,2,3,4];
+console.log(array.filter(function(value) {
+    return value > 2;
+}));
+
+
+// map
+console.log(array.map(function(value) {
+    return value * 2;
+}));
+
+// reverse 
+console.log(array.reverse());
+console.log(array);
+
+// concat and join
+var array2 = [1,2,3,4];
+var array3 = ["join","me"];
+console.log(array.concat(array3));
+console.log(array2);
+console.log(array3);
+
+console.log(array2.join(array3));
+console.log(array2.join(', ')); // turns array into a string ...
+
+// reduce method
+console.log(array.pop());
+console.log(array.reduce(function(total, value) {
+    console.log("total: " + total + " value: " + value);
+    return total + value;
+}));
 
