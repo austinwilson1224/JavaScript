@@ -1,5 +1,6 @@
 
 
+
 // object basics and literal notation
 var person = {
     name: "Austin",
@@ -7,13 +8,14 @@ var person = {
     details: {
         hobbies: ['sprots','cooking'],
         location: "USA"
-    },
-    greet: function hello() {
-        console.log("hello!");
-        console.log("hello, I am " + this.name); // need this for scope issues 
-        console.log("I am " + this.age + " years old");
-    },
-    "weight-1": 200
+    }
+    // },
+    // greet: function hello() {
+    //     console.log("hello!");
+    //     console.log("hello, I am " + this.name); // need this for scope issues 
+    //     console.log("I am " + this.age + " years old");
+    // },
+    // "weight-1": 200
 }
 
 var field = 'name';
@@ -22,13 +24,13 @@ console.log(person.age);
 console.log(person['name']);
 console.log(person[field]);
 console.log(person.details.hobbies);
-person.greet();
+//person.greet();
 console.log(typeof person);
 console.log(typeof person.name);
 console.log(person["weight-1"]);
 
 // properties and "this"
-person.name = "Anna";
+// person.name = "Anna";
 console.log(person);
 
 // alternative ways of creating objects
@@ -60,3 +62,20 @@ console.log(person3)
 var person4 = Object.create({name:'austin'});
 var person5 = Object.create(person);
 console.log(person5);
+console.log(person.__proto__);
+Object.prototype.greet = function() {
+    console.log("hello there, I am " + this.name);
+}
+person.greet();
+
+var austin = Object.create(person);
+var anna = Object.create(person);
+console.log(austin.name);
+anna.name = "Anna";
+anna.greet();
+austin.greet();
+
+console.log(anna.__proto__ == person);
+console.log(anna.__proto__.__proto__ == Object.prototype);
+
+console.log(Object.getPrototypeOf(anna) == person);
