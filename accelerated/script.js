@@ -10,6 +10,8 @@ var person = {
     },
     greet: function hello() {
         console.log("hello!");
+        console.log("hello, I am " + this.name); // need this for scope issues 
+        console.log("I am " + this.age + " years old");
     },
     "weight-1": 200
 }
@@ -28,3 +30,13 @@ console.log(person["weight-1"]);
 // properties and "this"
 person.name = "Anna";
 console.log(person);
+
+// alternative ways of creating objects
+var anotherPerson = Object();
+anotherPerson.name = "Saustin";
+anotherPerson.age = 23;
+anotherPerson.details = {
+    hobbies: [],
+    location : ""
+}
+console.log(anotherPerson);
