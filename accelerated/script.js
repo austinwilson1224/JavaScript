@@ -40,3 +40,23 @@ anotherPerson.details = {
     location : ""
 }
 console.log(anotherPerson);
+
+// objects are reference types
+var person1 = {
+    name: "austin",
+    age: 12
+}
+var person2 = {
+    name: "austin",
+    age: 12
+}
+console.log(person1 == person2)
+
+// object.create()
+var person3 = Object.create(null);
+person3.name = 'austin';
+console.log(person3)
+
+var person4 = Object.create({name:'austin'});
+var person5 = Object.create(person);
+console.log(person5);
