@@ -13,7 +13,21 @@ for(var i = 0; i <= 4; i++) {
 }
 
 
-console.log(a)
-console.log(b)
-console.log(c)
-console.log(d)
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+
+// try, catch, finally 
+try {
+    test();
+} catch(error) {
+    console.log(error);
+} finally {
+    console.log("Finally!");
+}
+
+
+
+
