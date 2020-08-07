@@ -98,10 +98,87 @@ person6.greet();
 console.log(person6 instanceof Person);
 
 
+// constructor functions and arguments
+function Person123(name, age) {
+    this.name = name;
+    this.age = age;
+}
+var test = new Person123('Austin',27);
+console.log(test);
+console.log(test instanceof Object);
 
 
+// this and strange behavior
+function fn(message) {
+    console.log(message + this);
+}
+fn();
+
+var obj = {
+    fn: fn,
+    obfn: fn
+}
+obj.fn();
+obj.obfn();
+// obj.obfn.bind(person);
+
+var person123 = {
+    name: "Austin",
+    age: 27
+}
+obj.obfn.bind(person, 'Hello')();
+obj.obfn.call(person, "helloo:':");
+obj.obfn.apply(person, ["helloooo"]);
 
 
+// creating properties with the defineProperty() method
+var account = {
+    cash: 1200,
+    _name: 'Default',
+    withdraw: function(amount) {
+        this.cash -= amount;
+        console.log("Withdrew" + amount + ", new cash reserve is" + this.cash);
+    }
+}
+ account.withdraw(100);
+ Object.defineProperty(account, 'deposit', {
+     value: function(amount) {
+         this.cash += amount;
+     }
+ });
+
+ Object.defineProperty(account, 'name', {
+    //  value: "ID000-1",
+    //  writable: true,
+     get: function() {
+         return this._name
+     },
+     set: function(name) {
+         this._name = name
+     }
+ });
+console.log(account.name);
+account.name = "ID000-2";
+console.log(account.name);
+
+
+// built-in methods
+var person21 = {
+    name: "austin",
+    age: 27,
+    greet: function() {
+        console.log("hello");
+    }
+}
+
+// delete person21.name;
+console.log(person21);
+console.log('name' in person21);
+console.log('age' in person21);
+for(var field in person21) {
+    console.log(field + ":" + person21[field]);
+    // console.log(person21[field])
+}
 
 
 
