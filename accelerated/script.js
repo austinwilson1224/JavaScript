@@ -79,3 +79,32 @@ console.log(anna.__proto__ == person);
 console.log(anna.__proto__.__proto__ == Object.prototype);
 
 console.log(Object.getPrototypeOf(anna) == person);
+
+// cunstructor
+function Person() {
+    this.name = '';
+    this.greet = function () {
+        console.log('hello this is ' + this.name);
+    }
+}
+
+
+var person6 = new Person();
+person6.name = "Austin";
+console.log(person6);
+console.log(person6.__proto__ == Object.prototype);
+person6.greet();
+
+console.log(person6 instanceof Person);
+
+
+
+
+
+
+
+
+
+
+
+
