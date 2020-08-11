@@ -34,3 +34,46 @@ console.log(string.split(' '));
 
 var string3 = '        Any     text    ';
 console.log(string3.trim());
+
+// math object 
+var pi = 3.14;
+var e = Math.E;
+pi = Math.PI;
+console.log(pi, e);
+
+a = -3;
+console.log(Math.abs(a));
+a = 1.23232
+console.log(Math.round(a));
+console.log(Math.ceil(a));
+console.log(Math.floor(a));
+console.log(Math.exp(2) + "what"); // this is e^x
+console.log(Math.log(e));
+console.log(Math.max(1,111,41,234324,5))
+console.log(Math.random());
+console.log(Math.floor(Math.random() * 10) + 1);
+
+
+// date objects ...
+var today = new Date();
+console.log(today);
+var tomorrow = new Date(2020,7,12);
+console.log(tomorrow);
+var theNextDay = new Date('2020/08/13');
+console.log(theNextDay);
+console.log(Date.parse('2020/08/14'));
+console.log(today.getDate());
+
+
+
+
+// regex
+var string4 = 'abcab';
+var pattern = /ab/;
+console.log(pattern);
+console.log(pattern.exec(string4));
+console.log(pattern.test(string4));
+console.log(string4.match(pattern));
+
+
+
