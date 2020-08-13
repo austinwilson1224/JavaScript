@@ -1,3 +1,4 @@
+
 // the window object 
 console.log(window.innerWidth);
 console.log(window.outerWidth);
@@ -38,4 +39,33 @@ document.querySelector('#easy').style.backgroundColor = 'lime';
 // selecting elements exercises
 document.querySelector('a').style.backgroundColor = 'red';
 document.querySelectorAll('.simplex')[0].firstElementChild.style.backgroundColor = 'yellow';
-document.querySelector('.simplex').firstElementChild.textContent = "HELLO!"
+document.querySelector('.simplex').firstElementChild.textContent = "HELLO!";
+
+// creating and inserting elements 
+var p = document.createElement('p');
+p.textContent = "A new paragraph";
+p.style.fontSize = '17px';
+console.log(p);
+
+var li = document.querySelector('li');
+var a = li.firstChild;
+// li.appendChild(p);
+li.insertBefore(p,a);
+
+// removing elements
+var secondLink = document.querySelector('a');
+console.log(secondLink);
+// secondLink.parentElement.removeChild(secondLink);
+secondLink.remove();
+
+// dialogs
+alert('this is an alert!');
+
+confirm('Are you sure?');
+var name = prompt('Your name is what?');
+name
+console.log(name);
+
+
+
+
