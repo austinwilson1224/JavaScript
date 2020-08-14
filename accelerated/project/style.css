@@ -35,11 +35,16 @@ header h1 {
 }
 
 #load {
-    visibility: hidden;
+    display: none;
 }
 
 #weather {
-    visibility: hidden;
+    display: none;
+    background-color: dodgerblue;
+    margin: auto;
+    width: 500px;
+    border-radius: 20px;
+
 }
 
 
