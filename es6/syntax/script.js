@@ -39,3 +39,34 @@ console.log(OBJ);
 
 OBJ.age = 30;
 console.log(OBJ);
+
+// hoisting
+// have to declare things before actually using them
+function doSomething() {
+    age2 = 27;
+}
+let age2;
+doSomething();
+console.log(age);
+
+// arrow functions
+function fn() {
+    console.log('hello1');
+}
+
+fn();
+
+var fn2 = () => {
+    console.log('hello2');
+}
+fn2();
+var fn3 = () => console.log('hello3');
+fn3();
+var fn4 = () => 'hello4';
+console.log(fn4());
+
+var add = (a,b) =>  a + b;
+console.log(add(3,2));
+
+var subtract = a => a - 2;
+console.log(subtract(2));
