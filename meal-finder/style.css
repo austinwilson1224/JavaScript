@@ -86,12 +86,13 @@ input[type='text'] {
     width: 100%;
     background: rgba(0,0,0,.7);
     display: flex;
+    align-items: center;
     justify-content: center;
     transition: opacity .2 ease-in;
     opacity: 0;
 }
 
-.meal: hover .meal-info {
+.meal:hover .meal-info {
     opacity: 1;
 }
 
