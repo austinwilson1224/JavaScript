@@ -21,10 +21,22 @@ class Helper {
     }
 }
 Helper.logTwice('austin!');
+
+
 class Person {
     constructor(name) {
-        this.name = 'Austin';
+        this._name = name;
     }
+    get name() {
+        return this._name;
+    }
+    set name(value) {
+        if (value.length >= 2) {
+            this._name = value;
+        }
+        console.log('rejected');
+    }
+
     greet() {
         console.log('hello my name is ' + this.name);
     }
@@ -52,3 +64,20 @@ let austin = new Austin(23);
 austin.greet();
 console.log(austin.age);
 console.log(austin.name);
+
+
+// extending built-in objects aka subclassing 
+class ConvertableArray extends Array {
+    convert() {
+        let returnArray = [];
+        this.forEach(value => returnArray.push('Converted' + value));
+        return returnArray;
+    }
+}
+let numberArray = new ConvertableArray();
+numberArray.push(1);
+numberArray.push(2);
+numberArray.push(3);
+console.log(numberArray.convert());
+
+
