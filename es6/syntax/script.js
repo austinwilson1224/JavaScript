@@ -161,3 +161,11 @@ let e = 4;
 let ff = 7;
 [ff, e] = [e, ff];
 console.log(ff,e);
+
+let test = {
+    what: 'austin',
+    so: 'wilson'
+}
+
+let {what,so} = test;
+console.log(what, so);
