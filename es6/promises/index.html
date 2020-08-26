@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let promise = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                // resolve('Done!');
+                reject('Failed!');
+            },1500)
+        });
+
+        promise.then(function(value) {
+            console.log(value)
+        }, function (error) {
+            console.log(error);
+        });
+
+
+    </script>
+
+    <script src="chaining.js
+    "></script>
+</body>
+</html>
