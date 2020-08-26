@@ -20,10 +20,57 @@
             console.log(error);
         });
 
+        function waitASecond(seconds) {
+            return new Promise(function (resolve, reject) {
+                if (seconds > 20) {
+                    reject('Rejected!');
+                } else {
+                    setTimeout(function() {
+                        seconds++;
+                        resolve(seconds);
+                    }, 1000);
+                }
+            });
+        }
+
+        waitASecond(0).then(waitASecond).then(function(seconds) {
+            console.log(seconds);
+        }).catch(function(error) {
+            console.log(error);
+        });
+
+
+        let promise1 = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                resolve('Resolved!');
+            }, 1000);
+        });
+
+        let promise2 = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                reject('Rejected!')
+            }, 2000);
+        });
+
+        Promise.all([promise1, promise2])
+            .then(function(success) {
+                console.log(success);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+            
+        Promise.all([promise1, promise2])
+            .then(function(success) {
+                console.log(success);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
 
     </script>
 
-    <script src="chaining.js
-    "></script>
+
 </body>
 </html>
