@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import * as tf from '@tensorflow/tfjs';
 
+import update from 'immutability-helper';
 import './TensorflowExample.css';
 
 const TensorflowExample = () => {
@@ -42,9 +44,43 @@ const TensorflowExample = () => {
         [e.target.name]: [parseInt(e.target.value)],
     })
 
-    const handleTrainModel = () => {}
+    const handleTrainModel = () => {
+        let xValues = [];
+        let yValues = [];
 
-    const handlePredict = () => {}
+        valuePairsState.forEach((val, index) => {
+            xValues.push(val.x);
+            yValues.push(val.y);
+        });
+
+        // define a model for linear regression
+        const model = tf.sequential();
+        model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+
+        // prepare the model for training 
+        model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
+        const xs = tf.tensor2d(xValues, [xValues.length, 1]);
+        const ys = tf.tensor2d(yValues, [yValues.length, 1]);
+
+        // train the model using the data
+        model.fit(xs, ys, {epochs: 250}).then(() => {
+            setModelState({
+                ...modelState,
+                model: model,
+                trained: true,
+                predictedValue: 'Ready for making predictions!',
+            })
+        })
+    }
+
+    const handlePredict = () => {
+        const predictedValue = modelState.model.predict(tf.tensor2d([modelState.valueToPredict],[1, 1])).arraySync()[0][0];
+
+        setModelState({
+            ...modelState,
+            predictedValue: predictedValue
+        })
+    }
 
 
     return (
@@ -78,12 +114,36 @@ const TensorflowExample = () => {
                     )
                 })}
 
+                <button className="button-add-example button--green" onClick={handleAddItem}>+</button>
+
                 <button
                     className="button-train button--green"
                     onClick={handleTrainModel}
                 >
                     Train
                 </button>
+            </div>
+
+            <div className="predict-controls">
+                <h2 className="section">Predicting</h2>
+                <input
+                    className="field element"
+                    value={modelState.valueToPredict}
+                    name="valueToPredict"
+                    onChange={handleModelChange}
+                    type="number"
+                    placeholder="Enter an integer number" 
+                />
+                <br/>
+                <div className="element">{modelState.predictedValue}</div>
+                <button
+                    className="element button--green"
+                    onClick={handlePredict}
+                    disabled={!modelState.trained}
+                >
+                    Predict
+                </button>
+
             </div>
         </div>
     )
