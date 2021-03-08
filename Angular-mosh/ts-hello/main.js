@@ -1,17 +1,6 @@
-var a;
-var b;
-var c;
-var d;
-var e = [1, 2, 3];
-var f = [1, true, 'a', false];
-var colorRed = 0;
-var colorGreen = 1;
-var colorBlue = 2;
-var Color;
-(function (Color) {
-    Color[Color["Red"] = 0] = "Red";
-    Color[Color["Green"] = 1] = "Green";
-    Color[Color["Blue"] = 2] = "Blue";
-})(Color || (Color = {}));
-;
-var backgroundColor = Color.Red;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var like_component_1 = require("./like.component");
+var comp = new like_component_1.LikeComponent(10, true);
+comp.onClick();
+console.log("likesCount: " + comp.likesCount + "\nisSelected: " + comp.isSelected);
