@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
     <!-- logo -->
     <div class="navbar-brand">
       <a class="navbar-item">
-        MY LOGO GOES HERE
+        <img src="assets/img/angular2.png" >
       </a>
+    </div>
+
+    <!-- menu -->
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" routerLink="/">Home</a>
+        <a class="navbar-item" routerLink="/contact">Contact</a>
+        <a class="navbar-item" routerLink="/users">Users</a>
+      </div>
     </div>
   </div>
   `,
