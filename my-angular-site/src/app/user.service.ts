@@ -15,10 +15,9 @@ export class UserService {
    */
 
   getUsers() {
-    this.http.get(`${this.apiUrl}?per_page=20`)
-      .subscribe(data => {
-        console.log(data);
-      })
+    return this.http
+      .get(`${this.apiUrl}?per_page=10`)
+
   }
 
   /**
