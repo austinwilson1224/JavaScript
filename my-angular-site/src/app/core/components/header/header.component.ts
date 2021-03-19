@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   <div class="navbar is-dark">
     <!-- logo -->
     <div class="navbar-brand">
-      <a class="navbar-item">
+      <a class="navbar-item" routerLink="/">
         <img src="assets/img/angular2.png" >
       </a>
     </div>

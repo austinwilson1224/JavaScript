@@ -1,4 +1,4 @@
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './core/users/users.module';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    loadChildren: () => import('./users/users.module').then(module => module.UsersModule)
+    loadChildren: () => import('./core/users/users.module').then(module => module.UsersModule)
   }
 ];
 
