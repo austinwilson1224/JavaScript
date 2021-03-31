@@ -1,5 +1,6 @@
 import { BudgetItem } from './../../shared/models/budget-item.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-item-modal',
@@ -8,14 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EditItemModalComponent implements OnInit {
 
-  @Input() item: BudgetItem;
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<EditItemModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public item: BudgetItem
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmitted(updatedItem: BudgetItem) {
-    
+    this.dialogRef.close(updatedItem);
   }
 
 }
