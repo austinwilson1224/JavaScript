@@ -1,0 +1,14 @@
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px;
+  grid-gap: 1px solid gray;
+  height: 200px;
+}
+
+app-square {
+  border: 1px gray solid;
+  height: 200px;
+}
+/*# sourceMappingURL=board.component.css.map */
